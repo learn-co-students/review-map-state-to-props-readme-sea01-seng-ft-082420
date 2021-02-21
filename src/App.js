@@ -5,7 +5,7 @@ import './App.css';
 
 class App extends Component {
 
-  handleOnClickItems() {
+  handleOnClickItems = () => {
     this.props.dispatch({
       type: 'GET_COUNT_OF_ITEMS',
     });
@@ -18,10 +18,9 @@ class App extends Component {
   }
 
   render() {
-    // debugger;
     return (
       <div className="App">
-          <button onClick={() => this.handleOnClickItems()}>
+          <button onClick={this.handleOnClickItems}>
             Click to change items count
             </button>
           <button onClick={() => this.handleOnClickUsers()}>
@@ -34,8 +33,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  debugger;
-  return { items: state.items }
+  return { orangePeel: ['a', 'b', 'c'] }
 }
 
 export default connect(mapStateToProps)(App);
